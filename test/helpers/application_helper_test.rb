@@ -1,0 +1,10 @@
+require 'test_helper'
+
+class ApplicationHelperTest < ActionView::TestCase
+  test "full title helper" do
+    base_title = "Ruby on Rails Tutorial Sample App"
+    delimeter = "|"
+    assert_equal full_title, base_title          
+    assert_equal full_title("Help"), "Help #{delimeter} #{base_title}"
+  end
+end
