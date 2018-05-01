@@ -73,8 +73,17 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "password should be 6 or more characters" do
-    @user.password = "12345"
+    assert @user.valid?
+    @user.password = "dale4ever"
+    @user.password_confirmation = "dale4ever"
+    assert @user.valid?
+
+    @user.password = "1234"
+    @user.password_confirmation = "1234"
     assert_not @user.valid?
+
+    
+    
   end
 
 end
